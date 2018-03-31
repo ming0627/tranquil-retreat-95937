@@ -24,6 +24,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', exphbs({defaultLayout:'layout'}));
 app.set('view engine', 'handlebars');
+app.set('view engine', 'ejs'); // set up ejs for templating
 
 // BodyParser Middleware
 app.use(bodyParser.json());
@@ -76,8 +77,8 @@ app.use(function (req, res, next) {
 
 
 
-app.use('/', routes);
-app.use('/users', users);
+app.use('/index', routes); //1st go in this
+app.use('/', users);
 
 // Set Port
 app.set('port', (process.env.PORT || 3000));

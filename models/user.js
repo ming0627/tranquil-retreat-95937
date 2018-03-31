@@ -50,7 +50,6 @@ module.exports.createUser = function(newUser, callback){
 	bcrypt.genSalt(10, function(err, salt) {
 	    bcrypt.hash(newUser.local.password, salt, function(err, hash) {
 			newUser.local.password = hash;
-			console.log(newUser.local.password);
 	        newUser.save(callback);
 	    });
 	});
