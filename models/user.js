@@ -1,3 +1,9 @@
+/*##########################################################################################################
+Version 5.0.1
+File Description:	
+No	Date			By					Change Log 
+1.	20180407		Chee Ming			Database scheme : User
+##############################################################################################################*/
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
@@ -28,22 +34,6 @@ var UserSchema = mongoose.Schema({
         name         : String
     }
 });
-/*
-var UserSchema = mongoose.Schema({
-	username: {
-		type: String,
-		index:true
-	},
-	password: {
-		type: String
-	},
-	email: {
-		type: String
-	},
-	name: {
-		type: String
-	}
-});*/
 
 var User = module.exports = mongoose.model('User', UserSchema);
 

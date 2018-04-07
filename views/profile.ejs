@@ -30,15 +30,35 @@
 						<strong>username</strong>: <%= user.local.username %><br>
 						<strong>password</strong>: <%= user.local.password %>
 					</p>
+				
 					
-					<a href="/unlink/local" class="btn btn-default">Unlink</a>
-				<% } else { %>
-					<a href="/connect/local" class="btn btn-default">Connect Local</a>
+
+				
+				<% } %>
+
+			</div>
+		</div>
+
+		<!-- FACEBOOK INFORMATION -->
+		<div class="col-sm-6">
+			<div class="well">
+				<h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
+
+				<!-- check if the user has this token (is the user authenticated with this social account) -->
+				<% if (user.facebook.token) { %>
+					<p>
+						<strong>id</strong>: <%= user.facebook.id %><br>
+						<strong>token</strong>: <%= user.facebook.token %><br>
+						<strong>email</strong>: <%= user.facebook.email %><br>
+						<strong>name</strong>: <%= user.facebook.name %><br>
+					</p>
 				<% } %>
 
 			</div>
 		</div>
 	</div>
+
+	
 </div>
 </body>
 </html>
